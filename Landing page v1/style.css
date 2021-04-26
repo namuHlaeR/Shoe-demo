@@ -1,2 +1,119 @@
-@import url('https://fonts.googleapis.com/css2?family=Gudea:ital,wght@0,400;0,700;1,400&family=Trade+Winds&display=swap');
+/* Global rules */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gudea', sans-serif;
+}
+body{
+    background-color: #362447;
+    overflow: hidden;
 
+}
+h1{
+    font-size: 3rem;
+}
+h2{
+    font-size: 3.4rem;
+}
+h3{
+    font-size: 2.6rem;
+}
+h4{
+    font-size: 1.2rem;
+}
+p{
+    font-size: 1.8rem;
+}
+.btn{
+    background-color: transparent;
+    color: #ff8172;
+    border: 6px solid #ff8172;
+    border-radius: 2rem;
+}
+
+/* Logo set up */
+.logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logoText{
+    font-family: 'Trade Winds', cursive;
+    font-size: 8rem;
+    text-align: center;
+    margin: 1rem 0 1.5rem 0;
+    z-index: 10;
+    color: #fffc40;
+}
+.logoBlock{
+    position: absolute;
+    width: 41.5rem;
+    height: 2.5rem;
+    top: 6.3rem;
+    border-radius: .8rem;
+    background-color: #3a579a;
+    box-shadow: inset 10px 20px 41px 0px #FF2FA9;
+}
+
+/* Header and special deal */
+.dealBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.header{
+    position: relative;
+    text-align: center;
+    top: -2rem;
+    color: #d5d9c0;
+}
+.shoe{
+    position: relative;
+    width: 28rem;
+    height: 36rem;
+    bottom: 4.5rem;
+    left: 10rem;
+    cursor: pointer;
+}
+.shadow{
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background-color: #fffc40;
+    border-radius: 50%;
+    bottom: 9rem;
+    right: 27rem;
+    box-shadow: 0 0 8rem 3rem  #fffc40;
+}
+.buy{
+    position: relative;
+    width: 12rem;
+    height: 5rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    right: 14rem;
+    bottom: 32rem;
+    cursor: pointer;
+}
+.buy:hover{
+    background-color: #ff8172;
+    color: #362447;
+    box-shadow: 0 0 .8rem .1rem #fffc40;
+}
+.shoe{
+    animation: move 4s infinite ease-in-out;
+}
+
+@keyframes move{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-25px);
+        }
+
+    100%{
+        transform: translateY(0);
+    }
+}

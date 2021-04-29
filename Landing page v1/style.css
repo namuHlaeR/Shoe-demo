@@ -11,8 +11,6 @@ body{
         90deg, rgba(54,36,71,.9)0, 
         rgba(54,36,71,1) 50%,
          rgba(54,36,71,.9) 100%);
-    overflow: hidden;
-
 }
 h1{
     font-size: 3rem;
@@ -29,6 +27,15 @@ h4{
 p{
     font-size: 1.8rem;
 }
+
+/* Grid layout */
+body{
+    width: 100%;
+    display: grid;
+    grid-template-columns: .5rem 29rem 1rem 29rem 1rem 29rem 1rem 29rem .5rem;
+    grid-template-rows: 3rem 8rem 1rem 6rem 2rem 44rem 2rem;
+}
+/* Buttons */
 .btn{
     background-color: transparent;
     color: #ff8172;
@@ -37,7 +44,7 @@ p{
     cursor: pointer;
 }
 .btnNav{
-    width: 6rem;
+    width: 8rem;
     height: 2rem;
     background-color: transparent;
     color: #ff8172;
@@ -53,9 +60,16 @@ p{
     border-radius: 50%;
     background-color: #ff8172;
     list-style: none;
+    cursor: pointer;
 }
 
 /* Navigation to other page sections */
+#nav{
+    grid-column: 4/7;
+    grid-row: 7;
+    display: flex;
+    justify-content: center;
+}   
 .navLinks{
     width: 15%;
     display: flex;
@@ -63,14 +77,18 @@ p{
     justify-content: space-around;
 }
 
+.navC:hover{
+    background-color: #362447;
+}
+
 /* Navigation buttons */
 .next{
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 2rem;
 }
 .prev{
-    position: absolute;
+    position: fixed;
     top: 50%;
     right: 1.5rem;
 }
@@ -82,72 +100,90 @@ p{
 
 /* Logo set up */
 .logo{
+    grid-column: 4/7;
+    grid-row: 2/3;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 .logoText{
     font-family: 'Trade Winds', cursive;
     font-size: 8rem;
     text-align: center;
-    margin: 1rem 0 1.5rem 0;
     z-index: 10;
     color: #fffc40;
 }
 .logoBlock{
-    position: absolute;
     width: 41.5rem;
     height: 2.5rem;
-    top: 6.3rem;
     border-radius: .8rem;
     background-color: #3a579a;
     box-shadow: inset 10px 20px 41px 0px #FF2FA9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Header and special deal */
+.header{
+    grid-column: 3/8;
+    grid-row: 4/5;
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #d5d9c0;
+}
 .dealBlock{
+    grid-column: 2/9;
+    grid-row: 5/6;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.header{
-    position: relative;
-    text-align: center;
-    top: -2rem;
-    color: #d5d9c0;
-}
 .shoe{
     position: relative;
-    width: 28rem;
-    height: 36rem;
-    bottom: 4.5rem;
-    left: 10rem;
+    left: 7rem;
+    bottom: 8rem;
+    width: 40rem;
+    height: 60rem;
     animation: move 4s infinite ease-in-out;
 }
 .shadow{
-    position: absolute;
-    width: 5rem;
-    height: 5rem;
+    position: relative;
+    width: 11rem;
+    height: 11rem;
     background-color: #fffc40;
     border-radius: 50%;
-    bottom: 9rem;
-    right: 27rem;
-    box-shadow: 0 0 8rem 3rem  #fffc40;
+    bottom: -21rem;
+    right: -9rem;
+    box-shadow: 0 0 13rem 6rem  #fffc40;
+    animation: move 4s infinite ease-in-out;
 }
 .buy{
     position: relative;
-    width: 12rem;
-    height: 5rem;
-    font-size: 1.6rem;
+    width: 16rem;
+    height: 10rem;
+    font-size: 2.4rem;
     font-weight: 600;
-    right: 14rem;
-    bottom: 32rem;
+    right: 18rem;
+    bottom: 49rem;
 }
 .buy:hover{
     background-color: #ff8172;
     color: #362447;
     box-shadow: 0 0 .8rem .1rem #fffc40;
 }
+.saleTxt{
+    position: relative;
+    bottom: 30rem;
+    color: #fffc40;
+    text-align: center;
+}
+/* Animations */
 @keyframes move{
     0%{
         transform: translateY(0);
@@ -160,3 +196,5 @@ p{
         transform: translateY(0);
     }
 }
+
+@media screen and (max-width)

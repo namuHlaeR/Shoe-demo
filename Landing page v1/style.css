@@ -5,6 +5,9 @@
     box-sizing: border-box;
     font-family: 'Gudea', sans-serif;
 }
+html{
+    font-size: 16px;
+}
 body{
     /*background-color: #362447;*/
     background: linear-gradient(
@@ -27,19 +30,26 @@ h4{
 p{
     font-size: 1.8rem;
 }
-
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /* Grid layout */
 body{
     width: 100%;
+    height: 100%;
     display: grid;
-    grid-template-columns: .5rem 29rem 1rem 29rem 1rem 29rem 1rem 29rem .5rem;
-    grid-template-rows: 3rem 8rem 1rem 6rem 2rem 44rem 2rem;
+    /*grid-template-columns: 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33% 8.33%;*/
+    grid-template-columns: repeat(auto-fit, minmax(112.36px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(1rem, fr));
+    row-gap: 1rem;
 }
 /* Buttons */
 .btn{
     background-color: transparent;
     color: #ff8172;
-    border: 6px solid #ff8172;
+    border: 1.8px solid #ff8172;
     border-radius: 2rem;
     cursor: pointer;
 }
@@ -65,32 +75,46 @@ body{
 
 /* Navigation to other page sections */
 #nav{
-    grid-column: 4/7;
+    grid-column: 6/8;
     grid-row: 7;
-    display: flex;
-    justify-content: center;
+    position: relative;
+    margin-top:  2rem;
+    bottom: 1rem;
 }   
 .navLinks{
-    width: 15%;
+    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    display: flex;
+    justify-content: space-evenly;
 }
-
 .navC:hover{
-    background-color: #362447;
+    box-shadow: 0 0 .5rem .5rem #fffc40;
 }
-
+.navLoc{
+    position: relative;
+    font-size: 2rem;
+    top: -4rem;
+    color: #FF2FA9;
+    display: none;
+  /*  box-shadow: 0 0 .5rem .5rem rgba(255, 252, 64, 0.4);
+    border: .4rem solid transparent;
+    width: fit-content;
+    border-radius: 0.4rem;*/
+}
+.show{
+    display: block;
+}
 /* Navigation buttons */
 .next{
     position: fixed;
     top: 50%;
-    left: 2rem;
+    left: 1%;
 }
 .prev{
     position: fixed;
     top: 50%;
-    right: 1.5rem;
+    right: 1%;
 }
 .next:hover,
 .prev:hover{
@@ -100,16 +124,14 @@ body{
 
 /* Logo set up */
 .logo{
-    grid-column: 4/7;
+    grid-column: 4/10;
     grid-row: 2/3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    overflow: initial;
+    padding: 4rem 0 2rem 0;
 }
 .logoText{
     font-family: 'Trade Winds', cursive;
-    font-size: 8rem;
+    font-size: 6.5rem;
     text-align: center;
     z-index: 10;
     color: #fffc40;
@@ -120,57 +142,46 @@ body{
     border-radius: .8rem;
     background-color: #3a579a;
     box-shadow: inset 10px 20px 41px 0px #FF2FA9;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 /* Header and special deal */
 .header{
-    grid-column: 3/8;
+    grid-column: 4/10;
     grid-row: 4/5;
     position: relative;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: #d5d9c0;
 }
 .dealBlock{
-    grid-column: 2/9;
+    padding-top: 3rem;
+    grid-column: 3/11;
     grid-row: 5/6;
-    display: flex;
     flex-direction: column;
-    align-items: center;
 }
 .shoe{
     position: relative;
-    left: 7rem;
-    bottom: 8rem;
-    width: 40rem;
-    height: 60rem;
+    left: 5rem;
+    top: -2rem;
     animation: move 4s infinite ease-in-out;
 }
 .shadow{
     position: relative;
-    width: 11rem;
-    height: 11rem;
+    left: 8rem;
+    top: 8.5rem;
+    width: 3rem;
+    height: 3rem;
     background-color: #fffc40;
     border-radius: 50%;
-    bottom: -21rem;
-    right: -9rem;
-    box-shadow: 0 0 13rem 6rem  #fffc40;
+    box-shadow: 0 0 6rem 4rem  #fffc40;
     animation: move 4s infinite ease-in-out;
 }
 .buy{
     position: relative;
-    width: 16rem;
-    height: 10rem;
-    font-size: 2.4rem;
-    font-weight: 600;
-    right: 18rem;
-    bottom: 49rem;
+    width: 10rem;
+    height: 4rem;
+    right: 10rem;
+    bottom: 10rem;
+    font-size: 1.6rem;
+    font-weight: 550;
 }
 .buy:hover{
     background-color: #ff8172;
@@ -179,10 +190,22 @@ body{
 }
 .saleTxt{
     position: relative;
-    bottom: 30rem;
     color: #fffc40;
     text-align: center;
+    font-size: 1.2rem;
+    bottom: 2.6rem;
 }
+
+/* Footer lol */
+.footer{
+    grid-column: 4/10;
+    grid-row: 8;
+    color: #d5d9c0;
+    opacity: .5;
+    font-size: 1rem;
+    padding-bottom: 0 2rem 0 2rem;
+}
+
 /* Animations */
 @keyframes move{
     0%{
@@ -197,4 +220,121 @@ body{
     }
 }
 
-@media screen and (max-width)
+/* Responsive breakpoints */
+
+@media (max-width: 1080px){
+    html{
+        font-size: 10px;
+    }
+    body{
+        overflow-x: hidden;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(224.72px, 1fr));
+        grid-template-rows: 1% 20% 2% 15% 2% 65% 4% 20%;
+    }
+    .logo{
+        grid-column: 2/6;
+        grid-row: 2/3;
+    }
+    .header{
+        grid-column: 2/6;
+        grid-row: 4/5;
+        font-size: 4rem;
+    }
+    .dealBlock{
+        grid-column: 2/6;
+        grid-row: 6/7;
+    }
+    .shoe{
+        left: 8rem;
+    }
+    .shadow{
+        left: 16rem;
+        top: 18rem;
+        width: 15rem;
+        height: 15rem;
+        box-shadow: 0 0 10rem 6rem  #fffc40;
+    }
+    .saleTxt{
+        font-size: 2rem;
+    }
+    .buy{
+        width: 16rem;
+        height: 6rem;
+        bottom: 22rem;
+        right: 19rem;
+        font-size: 2.5rem;
+    }
+    #nav{
+        grid-column: 2/6;
+        grid-row: 8;
+    }
+    .navLinks{
+        width: 35%;
+    }
+    .footer{
+        grid-column: 3/5;
+        grid-row: 9;
+        padding-bottom: 2rem;
+    }
+}
+@media (max-width: 768px){
+    html{
+        font-size: 6px;
+    }
+    body{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(348px, 1fr));
+        row-gap: .2rem;
+    }
+    .logo{
+        grid-column: 2/4;
+        grid-row: 2/3;
+        padding: 0;
+    }
+    .header{
+        padding: 0;
+        grid-column: 2/4;
+        grid-row: 4/5;
+        font-size: 4rem;
+    }
+    .dealBlock{
+        grid-column: 2/4;
+        grid-row: 6/7;
+    }
+    .shoe{
+        position: relative;
+        width: 42rem;
+        left: -1rem;
+    }
+    .shadow{
+        left: 7rem;
+        top: 18rem;
+        width: 15rem;
+        height: 15rem;
+        box-shadow: 0 0 10rem 6rem  #fffc40;
+    }
+    .saleTxt{
+        font-size: 1.9rem;
+    }
+    .buy{
+        width: 16rem;
+        height: 4rem;
+        bottom: 28rem;
+        right: 14rem;
+        font-size: 2.5rem;
+    }
+    #nav{
+        grid-column: 2/4;
+        grid-row: 8;
+    }
+    .footer{
+        grid-column: 2/4;
+        grid-row: 10;
+        padding-bottom: 2rem;
+    }
+}

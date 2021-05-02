@@ -1,8 +1,3 @@
-const navDot = document.getElementsByID("two");
-const text = document.getElementsByClassName("navLoc");
+const point = document.getElementById('two');
 
-function sup(){
-    console.log("hello")
-}
-
-sup()
+console.log("Hello");

@@ -47,30 +47,6 @@ body{
 }
 
 /* Buttons */
-.btnWlc{
-    position: fixed;
-    left: 50%;
-    bottom: 50%;
-    width: 160px;
-    height: 90px;
-    font-size: xx-large;
-    background-color: transparent;
-    border: 3px solid whitesmoke;
-    border-radius: 30px;
-    text-decoration: none; 
-    color: white;
-    cursor: pointer;
-}
-.btnTxt{
-    position: absolute;
-    right: 2.1rem;
-    opacity: 0;
-    z-index: 10;
-}
-.btnWlc:hover{
-    background-color: whitesmoke;
-    color: black;
-}
 .btn{
     background-color: transparent;
     color: #ff8172;
@@ -314,10 +290,11 @@ body{
         font-size: 6px;
     }
     body{
-        min-height: 360px;
+        margin: 2rem auto;
+        min-height: 160px;
         min-width: 320px;
+        max-height: 850px;
         width: 100%;
-        height: 1080px;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
     }
@@ -333,12 +310,12 @@ body{
         grid-column: 2/4;
         grid-row: 4/5;
         font-size: 4rem;
-        padding: 0 0 1rem 0;
+        padding: 0 0 .1rem 0;
     }
     .dealBlock{
         grid-column: 2/4;
         grid-row: 6/7;
-        padding: 8rem 0 4rem 0;
+        padding: .8rem 0 .4rem 0;
     }
     .shoe{
         position: relative;
@@ -366,7 +343,10 @@ body{
     #nav{
         grid-column: 2/4;
         grid-row: 8;
-        padding: 2rem 0 4rem 0;
+    }
+    .navC{
+        height: 3rem;
+        width: 3rem;
     }
     .footer{
         grid-column: 2/4;

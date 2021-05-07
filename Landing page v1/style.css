@@ -290,32 +290,32 @@ body{
         font-size: 6px;
     }
     body{
-        margin: 2rem auto;
         min-height: 160px;
         min-width: 320px;
         max-height: 850px;
         width: 100%;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     .logo{
-        grid-column: 2/4;
-        grid-row: 2/3;
-        padding: 2rem 0 1rem 0;
+        position: fixed;
+        display: flexbox;
+        top: 5rem;
+        left: 2rem;
+        right: 2rem;
     }
     .logoText{
-        font-size: 9.5rem;
+        font-size: 9rem;
     }
     .header{
-        grid-column: 2/4;
-        grid-row: 4/5;
+        position: absolute;
         font-size: 4rem;
-        padding: 0 0 .1rem 0;
+        top: 20rem;
     }
     .dealBlock{
-        grid-column: 2/4;
-        grid-row: 6/7;
-        padding: .8rem 0 .4rem 0;
+        position: relative;
     }
     .shoe{
         position: relative;
@@ -331,26 +331,27 @@ body{
     }
     .saleTxt{
         font-size: 1.9rem;
-        padding-top: 2rem;
     }
     .buy{
         width: 22rem;
         height: 9rem;
-        bottom: 34rem;
-        right: 14rem;
         font-size: 3.6rem;
+        left: -25%;
+        top: -50%;
     }
     #nav{
-        grid-column: 2/4;
-        grid-row: 8;
+        height: 15rem;
+        width: 30rem;
     }
     .navC{
-        height: 3rem;
-        width: 3rem;
+        height: 2rem;
+        width: 2rem;
     }
     .footer{
-        grid-column: 2/4;
-        grid-row: 10;
-        padding-bottom: 2rem;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 1rem;        
+    width: 20rem;
     }
 }

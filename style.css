@@ -3,21 +3,28 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+/*
 .center{
     display: flex;
     justify-content: center;
     align-items: center;
 }
+*/
 .btnWlc{
     position: fixed;
-    left: 50%;
-    bottom: 50%;
-    width: 160px;
-    height: 90px;
+    top: 50%;
+    width: 10rem;
+    height: 5.5rem;
     font-size: xx-large;
     background-color: transparent;
-    border: 3px solid whitesmoke;
-    border-radius: 30px;
+    border: .3rem solid whitesmoke;
+    border-radius: 1.5rem;
     text-decoration: none; 
     color: white;
     cursor: pointer;

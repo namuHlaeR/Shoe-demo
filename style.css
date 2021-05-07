@@ -30,10 +30,15 @@ body{
     cursor: pointer;
 }
 .btnTxt{
-    position: absolute;
-    right: 2.1rem;
-    opacity: 0;
+    position: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    height: 5.5rem;
+    width: 10rem;
     z-index: 10;
+    opacity: 0;
 }
 .btnWlc:hover{
     background-color: whitesmoke;
